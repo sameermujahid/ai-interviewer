@@ -122,9 +122,8 @@ http://localhost:5000
 
 The application is available at:
 
-```
+
 https://huggingface.co/spaces/sameer-mujahid/ai-interviewer
-```
 
 ---
 
