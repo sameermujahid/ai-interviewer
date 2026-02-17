@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Interviewer — RAG + SLM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>AI Interviewer</h1>
+        <p class="subtitle">Upload your resume, set a job title, and generate 20 personalized interview questions (10 technical + 10 behavioral).</p>
+      </header>
+<div class="window">
+  <div class="title-bar">
+      <section class="panel">
+        <div class="field">
+          <label class="label">Resume (PDF or DOCX)</label>
+          <input id="fileInput" type="file" accept=".pdf,.docx" />
+        </div>
+        <div class="field">
+          <label class="label">Target Job Title</label>
+          <select id="jobTitle">
+            <option value="">Select a job title...</option>
+            <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+            <option value="Data Scientist">Data Scientist</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Frontend Developer">Frontend Developer</option>
+            <option value="Backend Developer">Backend Developer</option>
+            <option value="Full Stack Developer">Full Stack Developer</option>
+            <option value="Cloud Engineer">Cloud Engineer</option>
+            <option value="DevOps Engineer">DevOps Engineer</option>
+            <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
+            <option value="Product Manager">Product Manager</option>
+            <option value="AI Researcher">AI Researcher</option>
+          </select>
+        </div>
+        
+ <!-- Extract / Generate Section -->
+<div class="actions">
+  <button id="extractBtn" aria-label="Extract text from resume">
+    <span class="button-text">Extract Text</span>
+  </button>
+  <button id="generateBtn" class="primary" aria-label="Generate interview questions">
+    <span class="button-text">Generate Questions</span>
+  </button>
+</div>
+<!-- Loading message outside buttons -->
+<div id="processLoading" class="loading-text"></div>
+
+
+      </section>
+
+      <section class="panel">
+        <label class="label">Extracted Resume Text</label>
+        <textarea id="resumeText" placeholder="Your extracted resume text will appear here..." rows="12"></textarea>
+      </section>
+    </div>
+<div class="title-bar">
+
+
+      <div class="simulation-section">
+        <h3>Interview Simulation</h3>
+
+<!-- Simulation Section -->
+<div class="actions">
+  <input type="text" id="interviewerQuestion" placeholder="Enter an interview question..." />
+  <button onclick="simulateAnswer()" class="primary" aria-label="Simulate answer">
+    <span class="button-text">Simulate Answer</span>
+  </button>
+</div>
+<!-- Loading message outside -->
+<div id="simulateLoadingText" class="loading-text"></div>
+        <div id="simulationBox"></div>
+      </div>
+    </div>
+    </div>      <section class="grid">
+      <div class="panel">
+        <h2>Technical Questions (10)</h2>
+        <ol id="techList"></ol>
+      </div>
+      <div class="panel">
+        <h2>Behavioral Questions (10)</h2>
+        <ol id="behList"></ol>
+      </div>
+    </section>
+
+    <footer>
+      <small>Models & Vector DB: Hugging Face + Jina Embeddings v3 + ChromaDB. Built with Flask.</small>
+    </footer>
+  </div>
+    <script src="/static/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+# Resume AI Interviewer - CPU-Optimized Requirements
+
+# Web framework
+Flask
+Werkzeug
+Jinja2
+itsdangerous
+click
+blinker
+MarkupSafe
+
+# Document processing
+PyMuPDF
+python-docx
+
+# Vector DB
+chromadb
+
+# Embedding model (lightweight for CPU)
+sentence-transformers
+
+# Core ML libraries optimized for CPU
+transformers
+torch  # Use the +cpu version explicitly during installation if needed
+numpy
+
+# Hugging Face utilities
+huggingface-hub
+tokenizers
+safetensors
+
+# Utilities
+regex
+requests
+tqdm
+filelock
+fsspec
+packaging
+pyyaml
+urllib3
+certifi
+charset-normalizer
+idna
+
+# Scientific computing (CPU optimized)
+scikit-learn
+scipy
+joblib
+threadpoolctl
+
+# Optional: For better text processing
+nltk
+pillow
+typing-extensions
+
+# Memory optimization
+psutil
